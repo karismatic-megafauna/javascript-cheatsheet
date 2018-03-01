@@ -6,26 +6,26 @@ state.
 
 ```js
 class Contact extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			loading: true,
-			nameFromInterwebz: '',
-		}
-	}
+  constructor(props) {
+    super(props)
+    this.state = {
+      loading: true,
+      nameFromInterwebz: '',
+    }
+  }
 
-	printId = (id) => {
-		return `Here is my id: ${id}`
-	}
+  printId = (id) => {
+    return `Here is my id: ${id}`
+  }
 
-	render() {
-		const { loading } = this.state
-		return (
-			<div>
-				{ loading && printId(4) }
-			</div>
-		)
-	}
+  render() {
+    const { loading } = this.state
+    return (
+      <div>
+        { loading && printId(4) }
+      </div>
+    )
+  }
 }
 ```
 
@@ -34,11 +34,12 @@ The constructor is where we set up our initial state. It is rarely used for
 anything more than this.
 
 ```js
-constructor(props) {
-	this.state = {
-		loading: true,
-	}
-}
+  constructor(props) {
+    super(props)
+    this.state = {
+      loading: true,
+    }
+  }
 ```
 
 # State
