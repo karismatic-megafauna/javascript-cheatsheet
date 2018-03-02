@@ -12,7 +12,14 @@ transpiles our code. These features have made the language very nice to work
 with and are heavily used in many web frameworks such as React and Angular.
 
 Here is a list of ES6 Specific Topics:
+- [Fat arrow functions](./es6/fat-arrow-functions.md)
 - [Modules (Importing and Exporting)](./es6/modules.md)
+- [Object property shorthand](./es6/object-property-shorthand.md)
+- [String Interpolation](./es6/string-interpolation.md)
+- [Spread and Rest](./es6/spread-and-rest.md)
+- [Destructuring](./es6/destructuring.md)
+- [const, let, var](./es6/const-let-var.md)
+- [Classes](./es6/classes.md)
 
 ## [React](./react/README.md)
 React is a really powerful and surprisingly simple UI framework that allows
