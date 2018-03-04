@@ -12,7 +12,7 @@ transpiles our code. These features have made the language very nice to work
 with and are heavily used in many web frameworks such as React and Angular.
 
 Here is a list of ES6 Specific Topics:
-- [Fat arrow functions](./es6/fat-arrow-functions.md)
+- [Arrow functions](./es6/arrow-functions.md)
 - [Modules (Importing and Exporting)](./es6/modules.md)
 - [Object property shorthand](./es6/object-property-shorthand.md)
 - [String Interpolation](./es6/string-interpolation.md)
