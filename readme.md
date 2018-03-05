@@ -15,11 +15,10 @@ Here is a list of ES6 Specific Topics:
 - [Arrow functions](./es6/arrow-functions.md)
 - [Modules (Importing and Exporting)](./es6/modules.md)
 - [Object property shorthand](./es6/object-property-shorthand.md)
-- [String Interpolation](./es6/string-interpolation.md)
-- [Spread and Rest](./es6/spread-and-rest.md)
+- [Template Literals (String Interpolation)](./es6/string-interpolation.md)
+- [Spread and Rest](./es6/spread.md)
 - [Destructuring](./es6/destructuring.md)
 - [const, let, var](./es6/const-let-var.md)
-- [Classes](./es6/classes.md)
 
 ## [React](./react)
 React is a really powerful and surprisingly simple UI framework that allows

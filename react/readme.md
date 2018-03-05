@@ -1,6 +1,6 @@
 # React
 The best reference for React is the [React
-Docs](https:/js.org/docs/hello-world.html). They are comprehensive and
+Docs](https://js.org/docs/hello-world.html). They are comprehensive and
 fairly easy to read. These docs are an attempt at a more informal and high level
 documentation about React.
 
