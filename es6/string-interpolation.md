@@ -17,3 +17,21 @@ No more of doing this nasty and error prone string concatenation:
 ```js
 const myString = "some string with a value in it " + value +  " - :)"
 ```
+
+## Newlines
+Template literals also preserve new lines. This can be really useful if you want to
+preserve line breaks etc.
+
+```js
+const withNewlines = `
+Hello!!!
+
+Wow!
+
+All of this spacing wil be preserved!
+
+even
+   the
+       indents
+               neato!`
+```

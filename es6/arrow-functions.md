@@ -1,16 +1,8 @@
 # Arrow Functions
-Arrow functions are a conscise way of defineing a funciton in ES6. They are
+Arrow functions are a conscise way of defining a funciton in ES6. They are
 useful for 2 reasons:
-- they are terser and make writing anonomyous functions less cluttery
+- they are terse and reduce clutter when writing anonomyous functions
 - they retain their `this` context
-
-When looking at [the docs on MDN about
-Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
-it says this:
-> Arrow functions capture the this value of the enclosing context
-
-What they are saying here is `this` behaves more like how you would expect it to
-behave. And that is great!
 
 ## Syntax
 Here is the es5 function syntax:
@@ -28,10 +20,70 @@ const printMessage = (msg) => {
 }
 ```
 
-This is a pretty easy syntax to pick up but it does have an interesting and
-slightly hard to pick up caveat...
+This is a pretty easy syntax to pick up! It is
 
-## The Confusing Stuff: Implicit vs Explicit Returns
+## Auto Binding of `this`
+When looking at [the docs on MDN about
+Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+it says this:
+> Arrow functions capture the `this` value of the enclosing context
+
+This is easier to understand with an example:
+
+Imagine we have this code:
+```js
+function Foo(cb) {
+  this.foo = 'Hello';
+
+  cb.doSomething(function (response) {
+    this.foo = response;
+  });
+}
+```
+
+This won't work as it's been executed in a different context. Before ES6 fixing
+this problem was done by either changing the context with `bind` or saving the
+context in a variable.
+
+Here would be the solution using `bind`:
+
+```js
+function Foo(cb) {
+  this.foo = 'Hello';
+
+  cb.doSomething(function (response) {
+    this.foo = response;
+  }.bind(this));
+}
+```
+And here would be the solution using a variable:
+
+```js
+function Foo(cb) {
+  var that = this;
+  that.foo = 'Hello';
+
+  cb.doSomething(function (response) {
+    that.foo = response;
+  });
+}
+```
+
+Many people felt this was inferior, which is why arrow functions automatically
+bind the context of this. So just writing our original code with an arrow
+function solves our problem!
+
+```js
+function Foo(cb) {
+  this.foo = 'Hello';
+
+  cb.doSomething((response) => {
+    this.foo = response;
+  });
+}
+```
+
+## Implicit vs Explicit Returns
 Possibly the most common bug or source of confusion with arrow funcitons is the
 implicit vs explict return coupled with adding a debugger. Let's go over the
 syntax first then describe the trap nearly every developer falls into.
@@ -68,7 +120,7 @@ const MyDiv = msg => {
 That all make sense? Great!!! Let's dive into the "trap" I am trying to
 illustrate...
 
-## The Debugger Bugger
+## It's a trap! The bugger with an implicit debugger
 Imagine there is a bug in this function and you want to put a `debugger`
 statement in this code. In the implicit case, a curious thing will happen...
 

@@ -30,6 +30,23 @@ changeId = () => {
 }
 ```
 
+## Default Props
+Default props are a way of defining props if the component is not passed any.
+Here is how it is done:
+
+```
+class Greeting extends React.Component {
+  // ...
+}
+
+Greeting.defaultProps = {
+  name: 'Mary'
+};
+```
+
+`name` will be defaulted to "Mary" if not passed to `<Greeting />` when the
+element is created.
+
 ## Lifecycle Methods
 These are special methods that are exposed by React that happen at certain
 events such as mounting, unmounting, recieving props, updating. These are

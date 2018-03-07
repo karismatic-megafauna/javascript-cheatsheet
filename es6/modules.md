@@ -12,7 +12,7 @@ It's clearer with an example:
 // util.js -> module definition
 
 const usefulUtil = () => {
-	return 'such useful, much util. wow.';
+  return 'such useful, much util. wow.';
 }
 
 export default usefulUtil;
@@ -46,11 +46,11 @@ functions:
 // util.js -> module definition
 
 export const usefulUtil = () => {
-	return 'such useful, much util. wow.';
+  return 'such useful, much util. wow.';
 }
 
 export const anotherUsefulUtil = () => {
-	return 'such useful, much another. wow.';
+  return 'such useful, much another. wow.';
 }
 ```
 
@@ -67,3 +67,29 @@ different. Now you _must_ import functions from the `util` module _exactly_ as
 they are named.
 
 ## Mixed Usage of Named and Default
+To top it all off, you can have modules that have both named exports and a
+default export! For instance:
+
+```js
+// util.js -> module definition
+
+const usefulUtil = () => {
+  return 'such useful, much util. wow.';
+}
+
+export const anotherUsefulUtil = () => {
+  return 'such useful, much another. wow.';
+}
+
+export default usefulUtil
+```
+
+```js
+// App.js -> module usage
+
+import usefulUtil, { anotherUsefulUtil } from './util.js';
+
+console.log(usefulUtil, anotherUsefulUtil);
+```
+
+This is a pretty common pattern with some larger libraries like React!
