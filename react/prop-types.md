@@ -13,4 +13,4 @@ cautious when "fixing" warnings and make sure that you aren't letting the usage
 change the source.
 
 ## Typescript
-This is actually what you want. If you feel the need for this, just make the leap to Typescript. I believe in you.
+This is actually what you want. If you feel the need for prop-types, just make the leap to Typescript. I believe in you.
